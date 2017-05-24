@@ -17,12 +17,3 @@ Exception Handling<br/>
  - Range of RGB value : 0~255 (each value)<br/>
  - avoid overflow & underflow<br/>
  
-How to run<br/>
-
-1. Open Solution File<br/>
-Path : Template\cximage\CxImgLib.sln<br/>
-- Build Library solution<br/>
-
-2. Open Solution File<br/>
-Path : Brightness\SRC\ImageProcessing.sln<br/>
-- Build template solution<br/>
