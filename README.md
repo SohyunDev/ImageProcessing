@@ -4,7 +4,7 @@ Making Brightnessfunction with CxImage
 Making Image brighter or darker
 
 Color Data Structure
-public:
+public:<br/>
   RGBQUAD m_color;
 typedef struct tagRGBQUAD {
   BYTE rgbBlue;
