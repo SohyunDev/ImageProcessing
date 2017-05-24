@@ -7,10 +7,10 @@ Color Data Structure<br/>
 public:<br/>
   RGBQUAD m_color;<br/>
 typedef struct tagRGBQUAD {<br/>
-  BYTE rgbBlue;<br/>
-  BYTE rgbGreen;<br/>
-  BYTE rgbRed;<br/>
-  BYTE rgbReserved;<br/>
+    BYTE rgbBlue;<br/>
+    BYTE rgbGreen;<br/>
+    BYTE rgbRed;<br/>
+    BYTE rgbReserved;<br/>
 } RGBQUAD;<br/>
 
 Exception Handling<br/>
