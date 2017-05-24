@@ -5,12 +5,12 @@ Making Image brighter or darker<br/>
 
 Color Data Structure<br/>
 public:<br/>
-nbsp; RGBQUAD m_color;<br/>
+>RGBQUAD m_color;<br/>
 typedef struct tagRGBQUAD {<br/>
-nbsp; BYTE rgbBlue;<br/>
-nbsp; BYTE rgbGreen;<br/>
-nbsp; BYTE rgbRed;<br/>
-nbsp; BYTE rgbReserved;<br/>
+>BYTE rgbBlue;<br/>
+>BYTE rgbGreen;<br/>
+>BYTE rgbRed;<br/>
+>BYTE rgbReserved;<br/>
 } RGBQUAD;<br/>
 
 Exception Handling<br/>
