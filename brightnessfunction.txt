@@ -1,0 +1,102 @@
+void CImageProcessingDoc::OnProcessBrightness()
+{
+	// TODO: Add a changing the brightness histogram code here
+	if (m_pImage) {
+		DlgBrightnessOption dlg;
+
+		if (dlg.DoModal() == IDOK) {
+			// write your own code
+			// for applying your effect, you must use m_pImage
+			// this code is a simple example for manufacturing image : grayscaling
+
+			int nPlusMinus = dlg.m_nPlusMinus;
+			BYTE byModifyValue = dlg.m_byModifyValue;
+
+			DWORD width = m_pImage->GetWidth();
+			DWORD height = m_pImage->GetHeight();
+			RGBQUAD color;
+			RGBQUAD newcolor;
+
+			for (DWORD y = 0; y < height; y++) {
+				for (DWORD x = 0; x < width; x++) {
+					color = m_pImage->GetPixelColor(x, y);
+					if (nPlusMinus == 0){
+						if (color.rgbBlue + byModifyValue>255){
+							newcolor.rgbBlue = 255;
+						}
+						else if (color.rgbBlue + byModifyValue < 0){
+							newcolor.rgbBlue = 0;
+						}
+						else{
+							newcolor.rgbBlue = color.rgbBlue + byModifyValue;
+						}
+
+						if (color.rgbGreen + byModifyValue >255){
+							newcolor.rgbGreen = 255;
+						}
+						else if (color.rgbGreen + byModifyValue< 0){
+							newcolor.rgbGreen = 0;
+						}
+						else{
+							newcolor.rgbGreen = color.rgbGreen + byModifyValue;
+						}
+
+						if (color.rgbRed + byModifyValue > 255){
+							newcolor.rgbRed = 255;
+						}
+						else if (color.rgbRed + byModifyValue< 0){
+							newcolor.rgbRed = 0;
+						}
+						else{
+							newcolor.rgbRed = color.rgbRed + byModifyValue;
+						}
+					}
+					else if (nPlusMinus == 1){
+						if (color.rgbBlue - byModifyValue  >255){
+							newcolor.rgbBlue = 255;
+						}
+						else if (color.rgbBlue - byModifyValue  < 0){
+							newcolor.rgbBlue = 0;
+						}
+						else{
+							newcolor.rgbBlue = color.rgbBlue - byModifyValue;
+						}
+
+						if (color.rgbGreen - byModifyValue  >255){
+							newcolor.rgbGreen = 255;
+						}
+						else if (color.rgbGreen - byModifyValue  < 0){
+							newcolor.rgbGreen = 0;
+						}
+						else{
+							newcolor.rgbGreen = color.rgbGreen - byModifyValue;
+						}if (color.rgbRed - byModifyValue  >255){
+							newcolor.rgbRed = 255;
+						}
+						else if (color.rgbRed - byModifyValue  < 0){
+							newcolor.rgbRed = 0;
+						}
+						else{
+							newcolor.rgbRed = color.rgbRed - byModifyValue;
+						}
+					}
+
+					m_pImage->SetPixelColor(x, y, newcolor);
+				}
+			}
+
+			// code to view overflow, Keep observation with the debugger
+			BYTE a = 255;
+			BYTE b = 1;
+			int  c = 10;
+			BYTE r;
+
+			r = a + b;
+			r = a + c;
+			r = b + c;
+		}
+	}
+
+	CalculateHistogram();
+	UpdateAllViews(NULL);
+}
